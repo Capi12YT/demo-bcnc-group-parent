@@ -1,0 +1,29 @@
+openapi: 3.0.1
+info:
+  title: Demo Bcnc API
+  description: Demo Bcnc API
+  version: 1.0.0
+tags:
+  - name: Demo Bcnc
+    description: API para el microservicio Demo Bcnc
+paths:
+  /tarifa:
+    get:
+      tags:
+        - demoBcnc
+      summary: Consulta de tarifa
+      parameters:
+        - $ref: './parameters.yaml#/components/parameters/fechaAplicacion'
+        - $ref: './parameters.yaml#/components/parameters/idProducto'
+        - $ref: './parameters.yaml#/components/parameters/idCadena'
+      responses:
+        '200':
+          description: Respuesta con la tarifa aplicada
+          content:
+            application/json:
+              schema:
+                $ref: './schemas.yaml#/components/schemas/TarifaResponse'
+        '400':
+          description: Solicitud inválida
+        '404':
+          description: No se encontró una tarifa

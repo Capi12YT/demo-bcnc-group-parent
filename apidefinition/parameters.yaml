@@ -1,0 +1,27 @@
+components:
+  parameters:
+    fechaAplicacion:
+      name: fechaAplicacion
+      in: query
+      required: true
+      description: Fecha de aplicación en formato YYYY-MM-DD
+      schema:
+        type: string
+        format: date
+
+    idProducto:
+      name: idProducto
+      in: query
+      required: true
+      description: Identificador del producto
+      schema:
+        type: string
+
+    idCadena:
+      name: idCadena
+      in: query
+      required: true
+      description: Identificador de la cadena
+      schema:
+        type: string
+

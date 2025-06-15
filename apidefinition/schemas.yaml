@@ -1,0 +1,27 @@
+components:
+  schemas:
+    TarifaResponse:
+      type: object
+      properties:
+        idProducto:
+          type: string
+          description: Identificador del producto
+        idCadena:
+          type: string
+          description: Identificador de la cadena
+        tarifaAplicar:
+          type: number
+          format: float
+          description: Tarifa aplicable
+        fechaInicio:
+          type: string
+          format: date
+          description: Fecha de inicio de aplicación
+        fechaFin:
+          type: string
+          format: date
+          description: Fecha de fin de aplicación
+        precioFinal:
+          type: number
+          format: float
+          description: Precio final a aplicar

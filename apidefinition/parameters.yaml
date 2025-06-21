@@ -4,10 +4,10 @@ components:
       name: fechaAplicacion
       in: query
       required: true
-      description: Fecha de aplicación en formato YYYY-MM-DD
+      description: Fecha de aplicación de la tarifa
       schema:
         type: string
-        format: date
+        format: date-time
 
     idProducto:
       name: idProducto

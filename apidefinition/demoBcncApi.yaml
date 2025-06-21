@@ -22,7 +22,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: './schemas.yaml#/components/schemas/TarifaResponse'
+                type: array
+                items:
+                  $ref: './schemas.yaml#/components/schemas/TarifaResponse'
         '400':
           description: Solicitud inválida
         '404':

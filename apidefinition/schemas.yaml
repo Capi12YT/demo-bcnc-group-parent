@@ -15,12 +15,8 @@ components:
           description: Tarifa aplicable
         fechaInicio:
           type: string
-          format: date
+          format: date-time
           description: Fecha de inicio de aplicación
-        fechaFin:
-          type: string
-          format: date
-          description: Fecha de fin de aplicación
         precioFinal:
           type: number
           format: float

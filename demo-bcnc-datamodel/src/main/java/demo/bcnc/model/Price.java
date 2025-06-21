@@ -4,6 +4,8 @@ package demo.bcnc.model;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Entity
 @Table(name = "PRICES")
@@ -22,13 +24,14 @@ public class Price {
     private Producto producto;
 
     @Column(name = "START_DATE", nullable = false)
-    private Instant startDate;
+    private LocalDateTime startDate;
 
     @Column(name = "END_DATE", nullable = false)
-    private Instant endDate;
+    private LocalDateTime endDate;
 
-    @Column(name = "PRICE_LIST", nullable = false)
-    private Integer priceList;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "PRICE_LIST", nullable = false)
+    private TarifasAplicar priceList;
 
     @Column(nullable = false)
     private boolean priority;
@@ -63,27 +66,27 @@ public class Price {
         this.producto = producto;
     }
 
-    public Instant getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Instant startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public Instant getEndDate() {
+    public LocalDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Instant endDate) {
+    public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
     }
 
-    public Integer getPriceList() {
+    public TarifasAplicar getPriceList() {
         return priceList;
     }
 
-    public void setPriceList(Integer priceList) {
+    public void setPriceList(TarifasAplicar priceList) {
         this.priceList = priceList;
     }
 
